@@ -262,20 +262,9 @@
         <!-- Core theme JS-->
         <script src="script.js"></script>
         <script>
-            fetch('https://fakestoreapi.com/products')
-            .then(
-                res => {
-                    return res.json();
-                }
-            )
-            .then(data => {
-                data.forEach(user => {
-                    const markup = `<li>${user.name}</li>`;
-
-                    document.querySelector('ul').insertAdjacentHTML('beforeend', markup)
-                })
-            })
-            .catch(error=>console.log(error))
+    fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
         </script>
     </body>
 </html>
