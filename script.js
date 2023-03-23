@@ -11,10 +11,10 @@ let tempArray = [];
 fetch("https://webacademy.se/fakestore/")
   .then(response => response.json())
   .then(data => {
-    render(data);
-  })
-  .catch(error => console.error(error));
+    render(data);}).catch(error => console.error(error)
+);
 
-  function render(tempArray){
-    console.log(tempArray[4])
-  }
+function render(tempArray){
+    
+    document.getElementById("id01").innerHTML = tempArray.find(item=>item.id === 1).title
+}
