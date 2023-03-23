@@ -17,5 +17,6 @@ fetch("https://webacademy.se/fakestore/")
 function render(tempArray){
     for(let i =  1; i < tempArray.length+1; i++){
     document.getElementById("id" + i + "-name").innerHTML = tempArray.find(item=>item.id === i).title
+    document.getElementById("id"+i+"-image").src = tempArray.find(item=>item.id === i).image
     }
 }
