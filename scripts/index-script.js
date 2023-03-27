@@ -8,7 +8,7 @@
 
 let tempArray = [];
 
-fetch("https://webacademy.se/fakestore/")
+fetch("https://fakestoreapi.com/products")
   .then(response => response.json())
   .then(data => {
     render(data);
@@ -20,6 +20,9 @@ function render(tempArray) {
     document.getElementById("id" + i + "-name").innerHTML = tempArray.find(item => item.id === i).title
     document.getElementById("id" + i + "-image").src = tempArray.find(item => item.id === i).image
     document.getElementById("id" + i + "-price").innerHTML = tempArray.find(item => item.id === i).price + ":-"
-
   }
+}
+
+function selectItem(input){
+  sessionStorage.setItem("curr-item",input)
 }
