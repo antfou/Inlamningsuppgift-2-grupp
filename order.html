@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+     <!-- Navigation-->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#!">Startsida</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="  bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Coola Beställningen</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Nej men den här vill du beställa</p>
+            </div>
+        </div>
+    </header>
+
+    <!--Textbars-->
+    <div class="container">
+        <div class="row">
+            <div class="col mx-auto p-2">
+                <form name="order-form" method="post">
+                    <div class="form-floating p-1">
+                        <input type="text" id="name" class="form-control" onblur="validateName()" placeholder="Namn">
+                        <label for="name" class="form-label">Namn</label>
+                        <p class="error name-error" style="color: red"></p>
+                    </div>
+                    <div class="form-floating p-1">
+                        <input type="text" id="email" class="form-control" onblur="validateEmail()" placeholder="Epost">
+                        <label for="name" class="form-label">E-post</label>
+                        <p class="error email-error" style="color: red"></p>
+                    </div>
+                    <div class="form-floating p-1">
+                        <input type="text" id="phonenr" class="form-control" onblur="validatePhone()" placeholder="Telefonnummer">
+                        <label for="name" class="form-label">Telefonnummer</label>
+                        <p class="error phone-error" style="color: red"></p>
+                    </div>
+                    <div class="form-floating p-1">
+                        <input type="text" id="adress" class="form-control" onblur="validateAdress()" placeholder="Adress">
+                        <label for="name" class="form-label">Adress</label>
+                        <p class="error adress-error" style="color: red"></p>
+                    </div>
+                    <div class="form-floating p-1">
+                        <input type="text" id="zip" class="form-control" onblur="validateZip()" placeholder="Postnummer">
+                        <label for="name" class="form-label">Postnummer</label>
+                        <p class="error zip-error" style="color: red"></p>
+                    </div>
+                    <div class="form-floating p-1">
+                        <input type="text" id="city" class="form-control" onblur="validateOrt()" placeholder="Ort">
+                        <label for="name" class="form-label">Ort</label>
+                        <p class="error city-error" style="color: red"></p>
+                    </div>
+                    <div class="form-floating p-1 text-center">
+                        <button id="submitbtn" class="btn btn-outline-dark">Skicka beställning</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const phonenr = document.getElementById("phonenr");
+const adress = document.getElementById("adress");
+const zip = document.getElementById("zip");
+const city = document.getElementById("city");
+
+const submitbtn = document.getElementById("submitbtn")
+
+function validateName() {
+    if (name.value.length < 2 || name.value.length > 50) {
+        document.querySelector(".name-error").innerHTML = "Please enter a valid name";
+        //document.querySelector(".name-error").style.display = "block"
+        submitbtn.disabled = true;
+        return false;
+    } else {
+        document.querySelector(".name-error").innerHTML = "";
+        return true;
+    }
+}
+
+function validateEmail() {
+    if (!email.value.includes('@') || email.value.length > 50) {
+        document.querySelector(".email-error").innerHTML = "Please enter a valid Email adress";
+        submitbtn.disabled = true;
+        return false;
+    } else {
+        document.querySelector(".email-error").innerHTML = "";
+        return true;
+    }
+}
+
+function validatePhone() {
+
+}
+
+function validateAdress() {
+    if (adress.value.length < 4 || adress.value.length > 50) {
+        document.querySelector(".adress-error").innerHTML = "Please enter a valid city";
+        //document.querySelector(".name-error").style.display = "block"
+        submitbtn.disabled = true;
+        return false;
+    } else {
+        document.querySelector(".adress-error").innerHTML = "";
+        return true;
+    }
+}
+
+function validateZip() {
+
+}
+
+function validateOrt() {
+    if (city.value.length < 2 || city.value.length > 50) {
+        document.querySelector(".city-error").innerHTML = "Please enter a valid city";
+        //document.querySelector(".name-error").style.display = "block"
+        submitbtn.disabled = true;
+        return false;
+    } else {
+        document.querySelector(".city-error").innerHTML = "";
+        return true;
+    }
+}
+</script>
+</body>
+</html>
