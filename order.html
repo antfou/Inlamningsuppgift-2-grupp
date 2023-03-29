@@ -122,7 +122,7 @@
                         <p class="error city-error" style="color: red"></p>
                     </div>
                     <div class="form-floating p-1 text-center">
-                        <button id="submitbtn" class="btn btn-outline-dark">Skicka beställning</button>
+                        <button id="submitbtn" class="btn btn-outline-dark" onclick="validateAll()">Skicka beställning</button>
                     </div>
                 </form>
             </div>
@@ -144,6 +144,7 @@ const zipPattern = /^[0-9]{3}\s?[0-9]{2}$/;
 const city = document.getElementById("city");
 
 const submitbtn = document.getElementById("submitbtn")
+submitbtn.disabled = true;
 
 function validateName() {
     if (name.value.length < 2 || name.value.length > 50) {
@@ -153,6 +154,7 @@ function validateName() {
         return false;
     } else {
         document.querySelector(".name-error").innerHTML = "";
+        //submitbtn.disabled = false;
         return true;
     }
 }
@@ -161,6 +163,7 @@ function validateName() {
 function validateEmail() {
     if  (emailPattern.test(email.value)){
         document.querySelector(".email-error").innerHTML = "";
+        //submitbtn.disabled = false;
         return true;
     } else {
         document.querySelector(".email-error").innerHTML = "Please enter a valid Email adress";
@@ -172,6 +175,7 @@ function validateEmail() {
 function validatePhone() {
     if(phonenrPattern.test(phonenr.value)){
         document.querySelector(".phone-error").innerHTML = "";
+        //submitbtn.disabled = false;
         return true;
     }else{
         document.querySelector(".phone-error").innerHTML = "Please enter a valid phone number";
@@ -188,6 +192,7 @@ function validateAdress() {
         return false;
     } else {
         document.querySelector(".adress-error").innerHTML = "";
+        //submitbtn.disabled = false;
         return true;
     }
 }
@@ -195,6 +200,7 @@ function validateAdress() {
 function validateZip() {
     if(zipPattern.test(zip.value)){
         document.querySelector(".zip-error").innerHTML = "";
+        //submitbtn.disabled = false;
         return true;
     }else{
         document.querySelector(".zip-error").innerHTML = "Please enter a valid Zip";
@@ -211,8 +217,22 @@ function validateOrt() {
         return false;
     } else {
         document.querySelector(".city-error").innerHTML = "";
+        //submitbtn.disabled = false;
         return true;
     }
+
+/*function validateAll(){
+    if(!validateOrt || !validateAdress || !validateEmail || !validateName || !validatePhone || !validateZip){
+        event.preventDefault();
+    }else{
+        document.getElementById("name")
+        document.getElementById("email")
+        document.getElementById("adress")
+        document.getElementById("phonenr")
+        document.getElementById("zip")
+        document.getElementById("city")
+    }
+    }*/
 }
 </script>
 
