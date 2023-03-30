@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,6 +14,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="style.css" rel="stylesheet" />
 </head>
+
 <body>
 
 
@@ -59,14 +61,82 @@
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Coola Bekräftelsen</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Vilken grej du köpt</p>
+                <p class="lead fw-normal text-white-50 mb-0">Nej men vilken grej du köpt</p>
             </div>
         </div>
     </header>
 
 
+    <div class="row">
+        <div class="col mb-5 w-50 h-25">
 
- 
+
+            <section class="py-5">
+                <div class="container px-4 px-lg-5 mt-5">
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5">
+                            <div class=" h-100">
+                                <!-- Product image-->
+                                <img id="product-image" src="https:\/\/picsum.photos\/500?random=2" class="card-img-top"
+                                    alt="..." />
+                                <!-- Product details-->
+                                <div>
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 id="product-name" class="fw-bolder">
+                                            Temporary Name</h5>
+                                        <!--Product categories-->
+                                        <!-- Product price-->
+                                        <p id="product-price">
+                                            $2 000 000
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Product actions-->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+        <div class="col mb-5 w-50 h-25">
+
+
+            <section class="py-5">
+                <div class="container px-4 px-lg-5 mt-5">
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5">
+                            <div class=" h-100">
+                                <div>
+                                    <div class="text-center">
+                                        <!-- Thank you message-->
+                                        <h5 class="fw-bolder"
+                                        id="thank-you-message">
+                                            Tack för ditt köp!
+                                        </h5>
+                                        <!--Customer info-->
+                                        <p id="customer-email"></p>
+                                        <p id="customer-phonenr"></p>
+                                        <p id="customer-adress"></p>
+                                        <p id="customer-city"></p>
+                                        <p id="customer-zip"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
 
 
 
@@ -78,6 +148,7 @@
     </footer>
 
 
+    <script src="scripts/confirmation-script.js"></script>
 
 
 </body>
