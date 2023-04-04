@@ -19,7 +19,4 @@ document.getElementById("customer-phonenr").innerHTML = "Telefon: " +sessionStor
 document.getElementById("customer-adress").innerHTML = "Levernasadress: " + sessionStorage.getItem("customer-adress")
 document.getElementById("customer-city").innerHTML = "Ort: " + sessionStorage.getItem("customer-city")
 document.getElementById("customer-zip").innerHTML = "Postnummer: " + sessionStorage.getItem("customer-zip")
-
-
-
 }
