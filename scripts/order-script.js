@@ -99,7 +99,7 @@ function validateOrt() {
 
 function validateAll(){
     if( !validateName()|| !validateEmail() || !validatePhone() || !validateAdress()  ||  !validateZip()||!validateOrt() ){
-        event.preventDefault();
+        preventDefault();
     }else{
         sessionStorage.setItem("customer-name",name.value)
         sessionStorage.setItem("customer-email",email.value)
