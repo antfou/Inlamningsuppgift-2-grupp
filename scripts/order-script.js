@@ -17,18 +17,18 @@ if(nr == tempArray.id){
 }
 }
 
-//REGEX
 const name = document.getElementById("name");
 const email = document.getElementById("email");
-const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 const phonenr = document.getElementById("phonenr");
-const phonenrPattern = /^[\d()-]{1,50}$/;
 const adress = document.getElementById("adress");
 const zip = document.getElementById("zip");
-const zipPattern = /^[0-9]{3}\s?[0-9]{2}$/;
 const city = document.getElementById("city");
-
 const submitbtn = document.getElementById("submitbtn")
+
+//REGEX
+const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+const zipPattern = /^[0-9]{3}\s?[0-9]{2}$/;
+const phonenrPattern = /^[\d()-]{1,50}$/;
 
 function validateName() {
     if (name.value.length < 2 || name.value.length > 50) {
@@ -95,7 +95,6 @@ function validateOrt() {
         return true;
     }
 }
-
 
 function validateAll(){
     if( !validateName()|| !validateEmail() || !validatePhone() || !validateAdress()  ||  !validateZip()||!validateOrt() ){
